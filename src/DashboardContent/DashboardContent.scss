@@ -62,6 +62,12 @@
   width: 85vw;
   height: 85vh;
   background-color: $off-white;
+  #dashboard-menu{
+    height: 7vh;
+    background-color: $off-black;
+    background-image: url("../Assets/black-orchid.png");
+  }
+  //used in students & terms
   .dashboard-empty{
     height: 100%;
     color: $light-grey;
@@ -72,9 +78,9 @@
   }
 }
 
-//****TERM STUFF****//
-#term-grid-container{
-  padding: 0 30px;
+//****DASHBOARD GRIDS****//
+.item-grid-container{
+  padding: 30px 30px 0;
   color: $light-grey;
   h2{
     font-size: 1rem;
@@ -87,6 +93,79 @@
     justify-content: space-between;
   }
 }
+
+.item-grid{
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .grid-item{
+    background-color: $white;
+    margin: 10px;
+    padding-top: 20px;
+    border-radius: 3px;
+    .item-top{
+      padding: 0 20px;
+      .item-icon{
+        font-size: 4rem;
+        color: $light-pink;
+        background-color: $black;
+        padding: 10px;
+        border-radius: 3px;
+      }
+      .grid-header-container{
+        margin-left: 10px;
+        .grid-item-header{
+          h2{
+            font-size: .75rem;
+          }
+          h3{
+            color: $light-green;
+            font-size: 1rem;
+            margin: 5px 0;
+          }
+          h4{
+            font-size: .75rem;
+          }
+        }
+      }
+    }
+    .grid-options{
+      margin-top: 20px;
+      .left-choice{
+        width: 75%;
+        height: 5vh;
+        background-color: $black;
+        text-align: center;
+        border-bottom-left-radius: 3px;
+        h5{
+          font-size: .65rem;
+          color: $white;
+          &:hover{
+            cursor: pointer;
+            color: $light-pink;
+          }
+        }
+      }
+      .right-choice{
+        width: 25%;
+        height: 5vh;
+        background-color: $light-pink;
+        border-bottom-right-radius: 3px;
+        .options-icon{
+          font-size: .65rem;
+          color: $white;
+          margin: 0 5px;
+          &:hover{
+            cursor: pointer;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+//****TERM STUFF****//
+
 
 //****STUDENT STUFF****//
 #grade-label{

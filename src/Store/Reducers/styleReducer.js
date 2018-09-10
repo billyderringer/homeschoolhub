@@ -16,7 +16,7 @@ const initialState = {
       borderRadius: '0',
       border: 'none',
       outline: 'none',
-      backgroundColor: 'rgba(0,0,0,.8)',
+      backgroundColor: 'rgb(0,0,0,.8)',
       color: 'rgba(255,255,255,.8)'
     },
     input: {

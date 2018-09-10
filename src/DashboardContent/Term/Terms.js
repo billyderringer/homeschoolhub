@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import '../DashboardContent.css'
 import moment from 'moment'
 import Modal from "react-modal"
@@ -69,9 +70,9 @@ class TermGrid extends Component {
   }
 
   removeTerm = (event) => {
+    //get id from parent container
     const currentId = event.target.parentNode.parentElement.parentElement.id
     const term = this.props.teacher.terms.find(term => term._id === currentId)
-    console.log(term)
     let confirmed = window.confirm("Are you sure you want to delete this term?" +
       "\nAll related data will be lost.")
     if (confirmed) {
@@ -90,7 +91,7 @@ class TermGrid extends Component {
   chooseTerm = (event) => {
     const currentId = event.target.parentNode.parentElement.parentElement.parentElement.id
     const term = this.props.teacher.terms.find(term => term._id === currentId)
-    this.props.chooseTerm(term)
+    this.props.chooseTerm(term, true)
   }
 
   render() {
@@ -98,9 +99,18 @@ class TermGrid extends Component {
     return (
       <React.Fragment>
         {/*Checks for school terms & renders accordingly*/}
-        {teacher.terms.length !== 0 ?
-          <section id="term-grid-container"
-                   className="flex flex-column">
+        {teacher.terms.length === 0 ?
+          <section className="center-all-flex flex-column dashboard-empty">
+            <h2>Welcome to Homeschool Hub!</h2>
+            <div className="add-instructions center-all-flex">
+              <h3>
+                Let's begin by adding a school term.
+              </h3>
+              <AddTerm/>
+            </div>
+          </section> : (teacher.termChosen) ?
+            <Redirect to={`/dashboard/term/students`} /> :
+          <section className="item-grid-container flex flex-column">
             <h2>Please choose a term or add a new one <AddTerm/></h2>
             <section className="item-grid flex flex-row">
               {
@@ -141,7 +151,7 @@ class TermGrid extends Component {
               }
             </section>
 
-            {/*Edit Student Modal*/}
+            {/*Edit Term Modal*/}
             <Modal isOpen={this.state.isModalOpen}
                    onRequestClose={this.closeModal}
                    ariaHideApp={false}
@@ -188,14 +198,6 @@ class TermGrid extends Component {
                 </form>
               </section>
             </Modal>
-          </section> : <section className="center-all-flex flex-column dashboard-empty">
-            <h2>Welcome to Homeschool Hub!</h2>
-            <div className="add-instructions center-all-flex">
-              <h3>
-                Let's begin by adding a school term.
-              </h3>
-              <AddTerm/>
-            </div>
           </section>
         }
       </React.Fragment>
@@ -220,8 +222,8 @@ const mapDispatchToProps = (dispatch) => {
       const action = {type: 'SET_TERMS', terms}
       dispatch(action)
     },
-    chooseTerm: (term) => {
-      const action = {type: 'CHOOSE_TERM', term}
+    chooseTerm: (term, termChosen) => {
+      const action = {type: 'CHOOSE_TERM', term, termChosen}
       dispatch(action)
     }
   }

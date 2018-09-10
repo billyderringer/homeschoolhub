@@ -123,59 +123,6 @@ a:active, a:focus {
 .container-90 {
   height: 90vh; }
 
-.item-grid {
-  flex-wrap: wrap;
-  justify-content: flex-start; }
-  .item-grid .grid-item {
-    background-color: #fff;
-    margin: 10px;
-    padding-top: 20px;
-    border-radius: 3px; }
-    .item-grid .grid-item .item-top {
-      padding: 0 20px; }
-      .item-grid .grid-item .item-top .item-icon {
-        font-size: 4rem;
-        color: #e83876;
-        background-color: #000;
-        padding: 10px;
-        border-radius: 3px; }
-      .item-grid .grid-item .item-top .grid-header-container {
-        margin-left: 10px; }
-        .item-grid .grid-item .item-top .grid-header-container .grid-item-header h2 {
-          font-size: .75rem; }
-        .item-grid .grid-item .item-top .grid-header-container .grid-item-header h3 {
-          color: #2bbbad;
-          font-size: 1rem;
-          margin: 5px 0; }
-        .item-grid .grid-item .item-top .grid-header-container .grid-item-header h4 {
-          font-size: .75rem; }
-    .item-grid .grid-item .grid-options {
-      margin-top: 10px; }
-      .item-grid .grid-item .grid-options .left-choice {
-        width: 75%;
-        height: 5vh;
-        background-color: #000;
-        text-align: center;
-        border-bottom-left-radius: 3px; }
-        .item-grid .grid-item .grid-options .left-choice h5 {
-          font-size: .65rem;
-          color: #fff; }
-          .item-grid .grid-item .grid-options .left-choice h5:hover {
-            cursor: pointer;
-            color: #e83876; }
-      .item-grid .grid-item .grid-options .right-choice {
-        width: 25%;
-        height: 5vh;
-        background-color: #e83876;
-        border-bottom-right-radius: 3px; }
-        .item-grid .grid-item .grid-options .right-choice .options-icon {
-          font-size: .65rem;
-          color: #fff;
-          margin: 0 5px; }
-          .item-grid .grid-item .grid-options .right-choice .options-icon:hover {
-            cursor: pointer;
-            color: #000; }
-
 .add-instructions {
   font-size: 1vw;
   margin-top: 20px; }
@@ -281,6 +228,10 @@ a:active, a:focus {
   width: 85vw;
   height: 85vh;
   background-color: #d1d1d1; }
+  #container-dashboard #dashboard-menu {
+    height: 7vh;
+    background-color: #3b3b3b;
+    background-image: url("../Assets/black-orchid.png"); }
   #container-dashboard .dashboard-empty {
     height: 100%;
     color: #878787;
@@ -288,16 +239,69 @@ a:active, a:focus {
     #container-dashboard .dashboard-empty h2 {
       font-size: 1.5vw; }
 
-#term-grid-container {
-  padding: 0 30px;
+.item-grid-container {
+  padding: 30px 30px 0;
   color: #878787; }
-  #term-grid-container h2 {
+  .item-grid-container h2 {
     font-size: 1rem; }
-    #term-grid-container h2 i {
+    .item-grid-container h2 i {
       font-size: 1.25rem; }
-  #term-grid-container h3 {
+  .item-grid-container h3 {
     align-items: center;
     justify-content: space-between; }
+
+.item-grid {
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+  .item-grid .grid-item {
+    background-color: #fff;
+    margin: 10px;
+    padding-top: 20px;
+    border-radius: 3px; }
+    .item-grid .grid-item .item-top {
+      padding: 0 20px; }
+      .item-grid .grid-item .item-top .item-icon {
+        font-size: 4rem;
+        color: #e83876;
+        background-color: #171717;
+        padding: 10px;
+        border-radius: 3px; }
+      .item-grid .grid-item .item-top .grid-header-container {
+        margin-left: 10px; }
+        .item-grid .grid-item .item-top .grid-header-container .grid-item-header h2 {
+          font-size: .75rem; }
+        .item-grid .grid-item .item-top .grid-header-container .grid-item-header h3 {
+          color: #2bbbad;
+          font-size: 1rem;
+          margin: 5px 0; }
+        .item-grid .grid-item .item-top .grid-header-container .grid-item-header h4 {
+          font-size: .75rem; }
+    .item-grid .grid-item .grid-options {
+      margin-top: 20px; }
+      .item-grid .grid-item .grid-options .left-choice {
+        width: 75%;
+        height: 5vh;
+        background-color: #171717;
+        text-align: center;
+        border-bottom-left-radius: 3px; }
+        .item-grid .grid-item .grid-options .left-choice h5 {
+          font-size: .65rem;
+          color: #fff; }
+          .item-grid .grid-item .grid-options .left-choice h5:hover {
+            cursor: pointer;
+            color: #e83876; }
+      .item-grid .grid-item .grid-options .right-choice {
+        width: 25%;
+        height: 5vh;
+        background-color: #e83876;
+        border-bottom-right-radius: 3px; }
+        .item-grid .grid-item .grid-options .right-choice .options-icon {
+          font-size: .65rem;
+          color: #fff;
+          margin: 0 5px; }
+          .item-grid .grid-item .grid-options .right-choice .options-icon:hover {
+            cursor: pointer;
+            color: #171717; }
 
 #grade-label {
   color: #2bbbad;

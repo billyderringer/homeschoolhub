@@ -1,5 +1,7 @@
 const initialState = {
-  currentTeacher: {},
+  currentTeacher: {
+    termChosen: false
+  },
   isLoggedIn: false,
   openLogin: false,
   openRegister: false,
@@ -59,7 +61,6 @@ const reducer = (state = initialState, action) => {
           ...state.currentTeacher,
           terms: action.terms.data
         }
-
       }
     case 'CHOOSE_TERM':
       return {

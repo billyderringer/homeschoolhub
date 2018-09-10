@@ -98,10 +98,10 @@ class StudentGrid extends Component{
     return(
       <React.Fragment>
         {/*Checks for school terms & renders accordingly*/}
-        {teacher.terms.length !== 0 ?
+        {teacher.currentTerm.students.length !== 0 ?
           <section id="term-grid-container"
                    className="flex flex-column">
-            <h2>Please choose a term or add a new one <AddStudent /></h2>
+            <h2>Please choose a student or add a new one <AddStudent /></h2>
             <section className="item-grid flex flex-row">
               {
                 teacher.terms.map((term, i) => {
@@ -113,9 +113,9 @@ class StudentGrid extends Component{
                       <div className="grid-item-header">
                         <h3>
                           {term.termTitle}
-                          <span className="choose-span" onClick={this.chooseTerm}>
-                                            Choose
-                                        </span>
+                          <div className="choose" onClick={this.chooseStudent}>
+                            Choose
+                          </div>
                         </h3>
                         <h4>{moment(term.termStart).add(1, 'days').format("MMM DD YYYY")} - {moment(term
                           .termEnd).add(1, 'days').format("MMM DD YYYY")}</h4>
@@ -134,6 +134,7 @@ class StudentGrid extends Component{
               }
             </section>
 
+            {/*Edit Student Modal*/}
             <Modal isOpen={this.state.isModalOpen}
                    onRequestClose={this.closeModal}
                    ariaHideApp={false}

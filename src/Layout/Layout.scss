@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  color: $off-black;
+  color: $black;
   #header-brand{
     width: 15vw;
     h2{
@@ -45,18 +45,50 @@
 
 .logout{
   height: 10vh;
-  background-color: $off-white;
+  background-color: $black;
   #header-brand{
     height: 10vh;
     background-color: $black;
     color: $light-green;
+  }
+  .notification-bar{
+    .notification-top{
+      margin: 0 30px;
+      .badge-icon{
+        position: relative;
+        i{
+          color: $dark-grey;
+          font-size: 7vh;
+        }
+        .badge-count{
+          h3{
+            background-color: $red;
+            color: $white;
+            font-size: .75rem;
+            padding: 3px 5px;
+            position: absolute;
+            top: 0;
+            right: -3px;
+          }
+        }
+      }
+      h4{
+        color: $white;
+        font-size: 1rem;
+        margin-left: 10px;
+      }
+    }
+
   }
 }
 
 #logout-panel{
   padding: 0 20px;
   height: 10vh;
-  background-color: $off-white;
+  background-color: $black;
+  i{
+    color: $red;
+  }
 }
 
 //****FOOTER****//

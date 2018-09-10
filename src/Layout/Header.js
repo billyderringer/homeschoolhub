@@ -25,6 +25,7 @@ class Header extends Component{
           }
           <h2>Homeschool Hub</h2>
         </Link>
+
         {loggedIn ?
           <LogoutPanel /> : <LoginPanel />}
       </nav>
