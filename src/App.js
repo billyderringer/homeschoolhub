@@ -17,7 +17,7 @@ class App extends Component {
         <Router>
           <div className="container-main">
             <Header/>
-            <Route path="/" exact strict component={Home}/>
+            <Route path="/homeschoolhub" exact strict component={Home}/>
             <Route path="/login" component={Login}/>
             <Route path="/register" component={Register}/>
             <Route path="/dashboard" component={Dashboard}/>
