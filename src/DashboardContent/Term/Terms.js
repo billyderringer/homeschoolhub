@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import '../DashboardContent.css'
 import moment from 'moment'
 import Modal from "react-modal"
@@ -8,7 +8,7 @@ import GenericApi from '../../Data/API/generic'
 
 const genericApi = new GenericApi()
 
-class TermGrid extends Component{
+class TermGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,8 +24,8 @@ class TermGrid extends Component{
     this.handleModal = this.handleModal.bind(this)
     this.editTerm = this.editTerm.bind(this)
     this.removeTerm = this.removeTerm.bind(this)
-    this.getTerms= this.getTerms.bind(this)
-    this.setTerms= this.setTerms.bind(this)
+    this.getTerms = this.getTerms.bind(this)
+    this.setTerms = this.setTerms.bind(this)
   }
 
   handleChange(event) {
@@ -42,7 +42,7 @@ class TermGrid extends Component{
     })
   }
 
-  handleModal(event){
+  handleModal(event) {
     const currentId = event.target.parentNode.parentElement.parentElement.id
     const term = this.props.teacher.terms.find(term => term._id === currentId)
     this.setState({
@@ -79,11 +79,11 @@ class TermGrid extends Component{
     }
   }
 
-  getTerms(){
+  getTerms() {
     genericApi.getElements('term', 'teacher', this.setTerms)
   }
 
-  setTerms(terms){
+  setTerms(terms) {
     this.props.setTerms(terms)
   }
 
@@ -93,34 +93,41 @@ class TermGrid extends Component{
     this.props.chooseTerm(term)
   }
 
-  render(){
+  render() {
     const {teacher} = this.props
-    return(
+    return (
       <React.Fragment>
         {/*Checks for school terms & renders accordingly*/}
         {teacher.terms.length !== 0 ?
           <section id="term-grid-container"
                    className="flex flex-column">
-            <h2>Please choose a term or add a new one <AddTerm /></h2>
+            <h2>Please choose a term or add a new one <AddTerm/></h2>
             <section className="item-grid flex flex-row">
               {
                 teacher.terms.map((term, i) => {
                   return <div key={i}
                               id={term._id}
-                              className="grid-item flex flex-row">
-                    <i className="item-icon fab fa-buromobelexperte"/>
-                    <div className="grid-header-container flex flex-column">
-                      <div className="grid-item-header">
-                        <h3>
-                          {term.termTitle}
-                          <span className="choose-span" onClick={this.chooseTerm}>
-                                            Choose
-                                        </span>
-                        </h3>
-                        <h4>{moment(term.termStart).add(1, 'days').format("MMM DD YYYY")} - {moment(term
-                          .termEnd).add(1, 'days').format("MMM DD YYYY")}</h4>
+                              className="grid-item flex flex-column">
+                    <div className="item-top flex flex-row">
+                      <i className="item-icon fab fa-buromobelexperte"/>
+                      <div className="grid-header-container flex flex-column">
+                        <div className="grid-item-header">
+                          <h3 className="flex">
+                            {term.termTitle}
+                          </h3>
+                          <h4>{moment(term.termStart).add(1, 'days').format("MMM DD YYYY")} - {moment(term
+                            .termEnd).add(1, 'days').format("MMM DD YYYY")}</h4>
+                        </div>
                       </div>
-                      <div className="grid-options flex flex-row">
+                    </div>
+
+                    <div className="grid-options flex flex-row">
+                      <div className="left-choice center-all-flex">
+                        <h5 className="choose-span" onClick={this.chooseTerm}>
+                          CHOOSE TERM
+                        </h5>
+                      </div>
+                      <div className="right-choice center-all-flex">
                         <i className="options-icon fas fa-cog"
                            onClick={this.handleModal}
                            title="Edit Term"/>
@@ -134,6 +141,7 @@ class TermGrid extends Component{
               }
             </section>
 
+            {/*Edit Student Modal*/}
             <Modal isOpen={this.state.isModalOpen}
                    onRequestClose={this.closeModal}
                    ariaHideApp={false}
@@ -195,14 +203,14 @@ class TermGrid extends Component{
   }
 }
 
-const mapStateToProps = (state) =>{
-  return{
+const mapStateToProps = (state) => {
+  return {
     styles: state.styleReducer,
     teacher: state.teacherReducer.currentTeacher
   }
 }
 
-const mapDispatchToProps = (dispatch) =>{
+const mapDispatchToProps = (dispatch) => {
   return {
     editTerm: (term) => {
       const action = {type: 'EDIT_TERM', term}

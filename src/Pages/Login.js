@@ -103,7 +103,7 @@ class Login extends Component {
                    required/>
 
             <div>
-              <Link to="/homeschoolhub/dashboard"
+              <Link to="/dashboard"
                     type="button"
                     onClick={this.handleSubmit}
                     className="link green-button">
@@ -119,7 +119,7 @@ class Login extends Component {
           </form>
           <div className="modal-switch flex flex-row">
             <p>New to Homeschool Hub?</p>
-            <Link to="/homeschoolhub/register"
+            <Link to="/register"
                   onClick={this.switchModal}
                   className="green-link">
               Sign Up

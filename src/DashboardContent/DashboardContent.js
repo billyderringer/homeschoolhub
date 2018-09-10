@@ -9,7 +9,7 @@ class DashboardContent extends Component {
       <Router>
         <section id="container-dashboard">
           <Route path="/dashboard/terms" component={Terms}/>
-          <Route path="/dashboard/students" component={Students}/>
+          <Route path="/dashboard/term/:termId/students" component={Students}/>
         </section>
       </Router>
     )

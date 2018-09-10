@@ -146,7 +146,7 @@ class Register extends Component {
           </form>
           <div className="modal-switch flex flex-row">
             <p>Already have an account?</p>
-            <Link to="/homeschoolhub/login"
+            <Link to="/login"
                   className="green-link">
               Login
             </Link>
