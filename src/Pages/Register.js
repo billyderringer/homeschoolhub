@@ -137,7 +137,7 @@ class Register extends Component {
                       className="link green-button">
                 Register
               </button>
-              <Link to="/homeschoolhub"
+              <Link to="/homeschoolhub/"
                     type="button"
                     className="link green-button">
                 Cancel

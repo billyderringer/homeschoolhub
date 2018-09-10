@@ -109,7 +109,7 @@ class Login extends Component {
                     className="link green-button">
                 Login
               </Link>
-              <Link to="/homeschoolhub"
+              <Link to="/homeschoolhub/"
                     type="button"
                     onClick={this.props.closeLogin}
                     className="link green-button">
