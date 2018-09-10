@@ -68,7 +68,7 @@ class LogoutPanel extends Component {
         </section>
         <section id="logout-panel"
                  className="center-all-flex">
-          <Link to="/homeschoolhub/"
+          <Link to="/"
                 onClick={this.logout}
                 title="Logout">
             <i className="fas fa-sign-out-alt"/>
