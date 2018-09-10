@@ -12,7 +12,7 @@ class Header extends Component{
       <nav id="container-header"
            className={loggedIn ?
              "logout" : "login"}>
-        <Link to={loggedIn ? "/dashboard" : "/"}
+        <Link to={loggedIn ? "/dashboard/terms" : "/homeschoolhub"}
               id="header-brand"
               className="center-all-flex">
           {loggedIn ?
