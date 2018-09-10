@@ -77,7 +77,7 @@ class Login extends Component {
   render() {
     return (this.props.teacher.isLoggedIn ?
         <Redirect to="/dashboard/terms"/> :
-        <div className="container-modal center-all-flex flex-column">
+        <div className="container-modal container-90 center-all-flex flex-column">
           <div className="modal-header flex flex-column">
             <h2 className="modal-title-page">LOGIN</h2>
             <img className="modal-logo-page"
