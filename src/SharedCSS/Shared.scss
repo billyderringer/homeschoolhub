@@ -1,0 +1,204 @@
+@import "Modal";
+@import "Colors";
+@import "Flex";
+
+//****RESETS****//
+html, body {
+  font-family: 'Gothic A1', sans-serif;
+  letter-spacing: .75px;
+}
+
+*, .container-fluid, .col, .row, nav, img, ul, li, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+a, p{
+  color: inherit;
+}
+
+a:hover, a:active, a:focus{
+  color: inherit;
+  text-decoration: none;
+}
+
+button{
+  border: none;
+  padding: 0 5px;
+  margin: 0 5px;
+  background: none;
+  &:hover{
+    cursor: pointer;
+  }
+  &:focus{
+    outline: none;
+  }
+}
+
+input{
+  &:enabled{
+    border: none;
+    outline: none;
+  }
+}
+
+a:active, a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+
+a:active, a:focus {
+  outline: 0;
+  border: none;
+}
+
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+}
+
+//****LAYOUT STUFF****//
+.container-85{
+  height: 85vh;
+}
+
+//****GRID-ITEMS****//
+.item-grid{
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .grid-item{
+    background-color: $white;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 3px;
+    .item-icon{
+      font-size: 4rem;
+      color: $light-pink;
+      background-color: $black;
+      padding: 10px;
+      border-radius: 3px;
+    }
+    .grid-header-container{
+      margin-left: 10px;
+      .grid-item-header{
+
+        h2{
+          font-size: .75rem;
+        }
+        h3{
+          color: $light-green;
+          font-size: 1rem;
+          margin: 5px 0;
+        }
+        h4{
+          font-size: .75rem;
+        }
+      }
+    }
+    .grid-options{
+      margin-top: 10px;
+      padding: 5px 0;
+      justify-content: flex-end;
+      .options-icon{
+        font-size: 1rem;
+        color: $light-grey;
+        margin-left: 10px;
+        &:hover{
+          cursor: pointer;
+          color: $light-pink;
+        }
+      }
+    }
+  }
+}
+
+//****BUTTONS/LINKS****//
+.add-instructions{
+  font-size: 1vw;
+  margin-top: 20px;
+  h3{
+    margin-right: 10px;
+  }
+  i{
+    font-size: 2vw;
+  }
+}
+
+.menu-icon{
+  color: $light-green;
+  font-size: 1vw;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.button-row{
+  margin-top: 10px;
+}
+
+@mixin hover-button($bgColor, $textColor){
+  background-color: $bgColor;
+  color: $textColor;
+  padding: 3px 5px;
+  &:hover{
+    background-color: $textColor;
+    color: $bgColor;
+  }
+}
+
+.green-button{
+  @include hover-button($light-green, $white)
+}
+
+@mixin hover-link($bgColor, $textColor){
+  background-color: $bgColor;
+  color: $textColor;
+  padding: 3px 5px;
+  &:hover{
+    background-color: $textColor;
+    color: $bgColor;
+    cursor: pointer;
+  }
+}
+
+@mixin outline-link($textColor){
+  background-color: transparent;
+  color: $textColor;
+  padding: 3px 5px;
+  font-size: .75rem;
+  &:hover{
+    outline: 1px solid $textColor;
+    color: $textColor;
+    cursor: pointer;
+  }
+  &:focus{
+    color: $textColor;
+  }
+}
+
+.hr-side-menu{
+  width: 90%;
+  margin-left: 5%;
+  border: .5px solid $opaqueWhite;
+}
+
+.green-link{
+  @include hover-link(inherit, $light-green);
+}
+
+.menu-link{
+  @include outline-link($light-green);
+}
+
+.failed-render{
+  color: $light-green;
+  font-size: .75em;
+  padding-top: 20px;
+  text-align: center;
+}

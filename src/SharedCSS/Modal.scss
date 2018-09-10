@@ -1,0 +1,70 @@
+@import "Colors";
+
+.container-menu {
+  margin-top: 30px;
+}
+
+.container-modal{
+  flex-direction: column;
+  background-color: $black;
+  .modal-header{
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 1px solid $off-black;
+    color: $white;
+    margin-bottom: 20px;
+    .modal-title-page{
+      font-size: 1rem;
+      color: $light-green;
+    }
+    .modal-title{
+      font-size: 2rem;
+      color: $light-green;
+    }
+    .modal-logo-page{
+      height: 60px;
+      margin: 20px 0;
+    }
+    .modal-logo{
+      height: 30px;
+      margin: 20px 0;
+    }
+    p{
+      padding-bottom: 10px;
+    }
+  }
+  form{
+    flex-direction: column;
+    input{
+      padding: 5px;
+      color: #fff;
+      background-color: rgba(255,255,255,.1);
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    select{
+      padding: 5px;
+      color: #fff;
+      border: none;
+      background-color: rgba(255,255,255,.1);
+      margin-bottom: 10px;
+      option{
+        background-color: $off-black;
+      }
+    }
+    .link{
+      font-size: .75rem;
+      margin-right: 10px;
+    }
+  }
+  .modal-switch{
+    color: $white;
+    align-items: center;
+    font-size: .75rem;
+    margin: 10px 0 0 5px;
+    p{
+      margin-right: 10px;
+    }
+  }
+}

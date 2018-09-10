@@ -1,0 +1,70 @@
+@import "../SharedCSS/Shared";
+
+//****LAYOUT****//
+#container-layout{
+
+}
+
+//****HEADER****//
+#container-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: $off-black;
+  #header-brand{
+    width: 15vw;
+    h2{
+      font-size: 1vw;
+      display: inline-block;
+    }
+    img{
+      height: 1.5vw;
+      margin-right: 5px;
+    }
+  }
+}
+
+.login{
+  height: 5vh;
+  background-color: $light-green;
+  #header-brand{
+    height: 5vh;
+    background-color: $light-green;
+    color: $white;
+  }
+}
+
+#login-panel{
+  height: 5vh;
+  padding: 0 20px;
+  background-color: $black;
+  align-self: right;
+}
+
+.logout{
+  height: 10vh;
+  background-color: $off-white;
+  #header-brand{
+    height: 10vh;
+    background-color: $black;
+    color: $light-green;
+  }
+}
+
+#logout-panel{
+  padding: 0 20px;
+  height: 10vh;
+  background-color: $off-white;
+}
+
+//****FOOTER****//
+#container-footer{
+  height: 5vh;
+  font-size: .6em;
+  background-color: $black;
+  h3{
+    color: $white;
+  }
+}

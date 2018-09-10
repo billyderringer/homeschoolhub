@@ -1,0 +1,98 @@
+@import "../SharedCSS/Shared";
+
+//****SIDE MENU****//
+#side-menu{
+  width: 15vw;
+  height: 85vh;
+  background-color: $off-black;
+  #profile-header{
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 30px 0;
+    img{
+      width: 3vw;
+      border-radius: 3px;
+      margin-right: 10px;
+    }
+    #teacher-profile{
+      flex-direction: column;
+      color: $off-white;
+      h2{
+        font-size: 1vw;
+        font-weight: 900;
+        color: $off-white;
+      }
+      h3{
+        font-size: .75vw;
+        font-weight: 300;
+      }
+    }
+  }
+  #quick-links{
+    padding: 0 20px;
+    #links-title{
+      color: $off-white;
+      font-size: .75rem;
+      margin-bottom: 20px;
+    }
+    .quick-link {
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      div {
+        align-items: flex-end;
+        i {
+          color: $white;
+          font-size: 1vw;
+        }
+        .menu-title {
+          font-size: .75rem;
+          font-weight: 300;
+          line-height: .875;
+          color: $off-white;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+//****DASHBOARD****//
+#container-dashboard{
+  width: 85vw;
+  height: 85vh;
+  background-color: $off-white;
+  .dashboard-empty{
+    height: 100%;
+    color: $light-grey;
+    margin-top: -5vh;
+    h2{
+      font-size: 1.5vw;
+    }
+  }
+}
+
+//****TERM STUFF****//
+#term-grid-container{
+  padding: 0 30px;
+  color: $light-grey;
+  h2{
+    font-size: 1rem;
+    i{
+      font-size: 1.25rem;
+    }
+  }
+}
+
+//****STUDENT STUFF****//
+#grade-label{
+  color: $light-green;
+  font-size: .9em;
+  margin-right: 20px;
+}
+
+#grade-select{
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+}

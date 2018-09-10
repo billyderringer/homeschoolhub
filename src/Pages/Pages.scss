@@ -1,0 +1,32 @@
+@import "../SharedCSS/Shared";
+
+
+//*****HOME*****//
+#container-home{
+  #hero{
+    height: 90vh;
+    color: $white;
+    background-image: url("../Assets/learning.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    h1{
+      opacity: .6;
+      font-size: 4.5em;
+      #hs-span{
+        color: $light-green;
+      }
+      #lv-span{
+        color: $light-purple
+      }
+    }
+  }
+}
+
+//*****LOGIN*****//
+
+//*****REGISTER*****//
+#container-register{
+  height: 90vh;
+}
+
+//*****DASHBOARD*****//

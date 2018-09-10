@@ -1,0 +1,37 @@
+.container-menu {
+  margin-top: 30px; }
+
+.container-modal {
+  flex-direction: column; }
+  .container-modal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3b3b3b;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-left: -10%;
+    width: 120%; }
+    .container-modal .modal-header .modal-title {
+      font-size: .9em;
+      color: #2bbbad; }
+    .container-modal .modal-header .modal-logo {
+      height: 20px; }
+  .container-modal form {
+    flex-direction: column; }
+    .container-modal form input {
+      padding: 5px;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      margin-bottom: 10px; }
+    .container-modal form select {
+      padding: 5px;
+      color: #fff;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin-bottom: 10px; }
+      .container-modal form select option {
+        background-color: #3b3b3b; }
+
+/*# sourceMappingURL=Modal.css.map */
